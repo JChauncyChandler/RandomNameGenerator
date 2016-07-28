@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.slim.js" integrity="sha256-L6ppAjL6jgtRmfiuigeEE5AwNI2pH/X9IBbPyanJeZw=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript">
+        var array = ["test", "test2", "Test3"];
+        var data1 =
+        [
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            }
+        ];
+        var data2 =
+        [
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            }
+        ];
+        var data3 =
+        [
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            }
+        ];
+        var data4 =
+        [
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "$0"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            },
+            {
+                "fn": 0,
+                "ln": array[1],
+                "pos": "On Call"
+            }
+        ];
+        $('#DoIt').on('click', function () {
+            $('#party1').bootstrapTable({
+                data: data1
+            });
+        });
+    </script>
+    <title>Sober Monitor Generator</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">The Wonderful Sober Monitor Picker</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="jumbotron">
+        
+            <button id="DoIt" type="button" class="btn btn-primary btn-block">May The Odds Be Ever In Your Favor</button>
+            
+            <!-- Table for party 1-->
+            <h2>Party 1</h2>
+            <table id="party1"class="table">
+                <thead>
+                    <tr>
+                        <th data-field="fn">First Name</th>
+                        <th data-field="ln">Last Name</th>
+                        <th data-field="pos">Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <!-- Table for party 2-->
+            <h2>Party 2</h2>
+            <table id="party2" class="table">
+                <thead>
+                    <tr>
+                        <th data-field="fn">First Name</th>
+                        <th data-field="ln">Last Name</th>
+                        <th data-field="pos">Position</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <!-- Table for party 3-->
+            <h2>Party 3</h2>
+            <table id="party3" class="table">
+                <thead>
+                    <tr>
+                        <th data-field="fn">First Name</th>
+                        <th data-field="ln">Last Name</th>
+                        <th data-field="pos">Position</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <!-- Table for party 4-->
+            <h2>Party 4</h2>
+            <table id="party4" class="table">
+                <thead>
+                    <tr>
+                        <th data-field="fn">First Name</th>
+                        <th data-field="ln">Last Name</th>
+                        <th data-field="pos">Position</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
