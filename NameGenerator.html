@@ -1,13 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.slim.js" integrity="sha256-L6ppAjL6jgtRmfiuigeEE5AwNI2pH/X9IBbPyanJeZw=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<!-- Bootstrap Table CDNs -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
+	<!-- End of Bootstrap Table CDNs -->
     <script type="text/javascript">
         var array = ["test", "test2", "Test3"];
         var data1 =
@@ -182,11 +186,6 @@
                 "pos": "On Call"
             }
         ];
-        $('#DoIt').on('click', function () {
-            $('#party1').bootstrapTable({
-                data: data1
-            });
-        });
     </script>
     <title>Sober Monitor Generator</title>
     <style>
@@ -264,5 +263,13 @@
         </div>
 
     </div>
+	<script type="text/javascript">
+	$('#DoIt').on('click', function () {
+	  //console.log(data1);
+      $('#party1').bootstrapTable({
+        data: data1
+      });
+    });
+    </script>
 </body>
 </html>
