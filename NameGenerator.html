@@ -13,179 +13,66 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
 	<!-- End of Bootstrap Table CDNs -->
     <script type="text/javascript">
-        var array = ["test", "test2", "Test3"];
-        var data1 =
-        [
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            }
-        ];
-        var data2 =
-        [
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            }
-        ];
-        var data3 =
-        [
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            }
-        ];
-        var data4 =
-        [
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "$0"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            },
-            {
-                "fn": 0,
-                "ln": array[1],
-                "pos": "On Call"
-            }
-        ];
+        var chosenPeople = []
+        var text = '{ "brothers" : ['+
+                   '{"Name":"Acosta Andres"},' +
+                   '{"Name":"Ash Jacob B."},' +
+                   '{"Name":"Atkinson Bradley J."},' +
+                   '{"Name":"Basquette Weston J."},' +
+                   '{"Name":"Becker Zack E."},' +
+                   '{"Name":"Bettendorf Carson W."},' +
+                   '{"Name":"Biros Steven E."},' +
+                   '{"Name":"Bowman Nicholas G."},' +
+                   '{"Name":"Brandsgaard Peter"},' +
+                   '{"Name":"Brooks Michael R."},' +
+                   '{"Name":"Clarke Kevan S."},' +
+                   '{"Name":"DuMontier Parker J."},' +
+                   '{"Name":"Eagan Landen C."},' +
+                   '{"Name":"Endsley Nicholas S."},' +
+                   '{"Name":"Farinella Samuel F."},' +
+                   '{"Name":"Foutch Alec P."},' +
+                   '{"Name":"Gabel Joshua J."},' +
+                   '{"Name":"Gerstenkorn Matthew G."},' +
+                   '{"Name":"Gjerde Jamison E."},' +
+                   '{"Name":"Kirby Austin T."},' +
+                   '{"Name":"Laramie Austin M."},' +
+                   '{"Name":"Lindsay David S."},' +
+                   '{"Name":"Marsch Jackson L."},' +
+                   '{"Name":"Mathewson Ryan A."},' +
+                   '{"Name":"Meyer Grahm R."},' +
+                   '{"Name":"Meyer William B."},' +
+                   '{"Name":"Naeger Ian V."},' +
+                   '{"Name":"Norman Brett A."},' +
+                   '{"Name":"OGorman Nicholas P."},' +
+                   '{"Name":"Oman Richard A."},' +
+                   '{"Name":"Ort Gabe D."},' +
+                   '{"Name":"Patel Hareen B."},' +
+                   '{"Name":"Pawlak Brett C."},' +
+                   '{"Name":"Rademan Kael M."},' +
+                   '{"Name":"Roussin Ethan J."},' +
+                   '{"Name":"Salcedo Braxton T."},' +
+                   '{"Name":"Salinas Alex A."},' +
+                   '{"Name":"Sanders Jacob J. D."},' +
+                   '{"Name":"Schowalter Ryan R."},' +
+                   '{"Name":"Short Alec W."},' +
+                   '{"Name":"Sikes Preston S"},' +
+                   '{"Name":"Skawinski Chase L. S."},' +
+                   '{"Name":"Smith Jackson T."},' +
+                   '{"Name":"Surls Brett A."},' +
+                   '{"Name":"Taylor Matthew J."},' +
+                   '{"Name":"Taylor Nicholas J."},' +
+                   '{"Name":"Tompkins Spencer G."},' +
+                   '{"Name":"Wan Wenbin"},' +
+                   '{"Name":"Wands Corey P."},' +
+                   '{"Name":"Warder Cameron P."},' +
+                   '{"Name":"Weiss Conner A."},' +
+                   '{"Name":"Whetsel Christopher J."},' +
+                   '{"Name":"White Jesse N."},' +
+                   '{"Name":"White Kyle J."},' +
+                   '{"Name":"Wilken Ethan A."},' +
+                   '{"Name":"Wilt Garrett R."},' +
+                   '{"Name":"Wolken John M."}]}';
+        var obj = JSON.parse(text);
     </script>
     <title>Sober Monitor Generator</title>
     <style>
@@ -212,9 +99,7 @@
             <table id="party1"class="table">
                 <thead>
                     <tr>
-                        <th data-field="fn">First Name</th>
-                        <th data-field="ln">Last Name</th>
-                        <th data-field="pos">Position</th>
+                        <th data-field="fn">Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -227,9 +112,7 @@
             <table id="party2" class="table">
                 <thead>
                     <tr>
-                        <th data-field="fn">First Name</th>
-                        <th data-field="ln">Last Name</th>
-                        <th data-field="pos">Position</th>
+                        <th data-field="fn">Name</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -240,9 +123,7 @@
             <table id="party3" class="table">
                 <thead>
                     <tr>
-                        <th data-field="fn">First Name</th>
-                        <th data-field="ln">Last Name</th>
-                        <th data-field="pos">Position</th>
+                        <th data-field="fn">Name</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -253,9 +134,7 @@
             <table id="party4" class="table">
                 <thead>
                     <tr>
-                        <th data-field="fn">First Name</th>
-                        <th data-field="ln">Last Name</th>
-                        <th data-field="pos">Position</th>
+                        <th data-field="fn">Name</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -264,12 +143,168 @@
 
     </div>
 	<script type="text/javascript">
-	$('#DoIt').on('click', function () {
-	  //console.log(data1);
-      $('#party1').bootstrapTable({
-        data: data1
-      });
-    });
+        $('#DoIt').on('click', function () {
+            
+            for (i = 0; i < 56; i++) {
+            
+                chosenPeople[i] = Math.floor(Math.random() * (56 - 0));
+                console.log[chosenPeople[i]];
+                for (j = 0; j < obj.length; j++) {
+                    if (chosenPeople[i] == chosenPeople[j]) {
+                        chosenPeople[i] = Math.floor(Math.random() * (obj.length - 0));
+                        j = 0;
+                    }
+                }
+            }
+
+            $('#party1').bootstrapTable({
+               data: data1
+            });
+            $('#party2').bootstrapTable({
+               data: data2
+            });
+            $('#party3').bootstrapTable({
+               data: data3
+            });
+            $('#party4').bootstrapTable({
+               data: data4
+            });
+        });
+       
+        var data1 =
+        [
+            {
+                "fn": obj.brothers[chosenPeople[0]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[1]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[2]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[3]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[4]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[5]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[6]],
+            },
+            {
+                "fn": obj.brothers[chosenPeople[7]],
+
+            }
+        ];
+        var data2 =
+        [
+            {
+                "fn": obj.brothers[chosenPeople[8]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[9]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[10]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[11]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[12]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[13]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[14]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[15]],
+
+            }
+        ];
+        var data3 =
+        [
+            {
+                "fn": obj.brothers[chosenPeople[16]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[17]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[18]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[19]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[20]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[21]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[22]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[23]],
+
+            }
+        ];
+        var data4 =
+        [
+            {
+                "fn": obj.brothers[chosenPeople[24]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[25]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[26]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[27]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[28]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[29]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[30]],
+
+            },
+            {
+                "fn": obj.brothers[chosenPeople[31]],
+
+            }
+        ];
     </script>
 </body>
 </html>
