@@ -13,66 +13,65 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
 	<!-- End of Bootstrap Table CDNs -->
     <script type="text/javascript">
-        var chosenPeople = []
-        var text = '{ "brothers" : ['+
-                   '{"Name":"Acosta Andres"},' +
-                   '{"Name":"Ash Jacob B."},' +
-                   '{"Name":"Atkinson Bradley J."},' +
-                   '{"Name":"Basquette Weston J."},' +
-                   '{"Name":"Becker Zack E."},' +
-                   '{"Name":"Bettendorf Carson W."},' +
-                   '{"Name":"Biros Steven E."},' +
-                   '{"Name":"Bowman Nicholas G."},' +
-                   '{"Name":"Brandsgaard Peter"},' +
-                   '{"Name":"Brooks Michael R."},' +
-                   '{"Name":"Clarke Kevan S."},' +
-                   '{"Name":"DuMontier Parker J."},' +
-                   '{"Name":"Eagan Landen C."},' +
-                   '{"Name":"Endsley Nicholas S."},' +
-                   '{"Name":"Farinella Samuel F."},' +
-                   '{"Name":"Foutch Alec P."},' +
-                   '{"Name":"Gabel Joshua J."},' +
-                   '{"Name":"Gerstenkorn Matthew G."},' +
-                   '{"Name":"Gjerde Jamison E."},' +
-                   '{"Name":"Kirby Austin T."},' +
-                   '{"Name":"Laramie Austin M."},' +
-                   '{"Name":"Lindsay David S."},' +
-                   '{"Name":"Marsch Jackson L."},' +
-                   '{"Name":"Mathewson Ryan A."},' +
-                   '{"Name":"Meyer Grahm R."},' +
-                   '{"Name":"Meyer William B."},' +
-                   '{"Name":"Naeger Ian V."},' +
-                   '{"Name":"Norman Brett A."},' +
-                   '{"Name":"OGorman Nicholas P."},' +
-                   '{"Name":"Oman Richard A."},' +
-                   '{"Name":"Ort Gabe D."},' +
-                   '{"Name":"Patel Hareen B."},' +
-                   '{"Name":"Pawlak Brett C."},' +
-                   '{"Name":"Rademan Kael M."},' +
-                   '{"Name":"Roussin Ethan J."},' +
-                   '{"Name":"Salcedo Braxton T."},' +
-                   '{"Name":"Salinas Alex A."},' +
-                   '{"Name":"Sanders Jacob J. D."},' +
-                   '{"Name":"Schowalter Ryan R."},' +
-                   '{"Name":"Short Alec W."},' +
-                   '{"Name":"Sikes Preston S"},' +
-                   '{"Name":"Skawinski Chase L. S."},' +
-                   '{"Name":"Smith Jackson T."},' +
-                   '{"Name":"Surls Brett A."},' +
-                   '{"Name":"Taylor Matthew J."},' +
-                   '{"Name":"Taylor Nicholas J."},' +
-                   '{"Name":"Tompkins Spencer G."},' +
-                   '{"Name":"Wan Wenbin"},' +
-                   '{"Name":"Wands Corey P."},' +
-                   '{"Name":"Warder Cameron P."},' +
-                   '{"Name":"Weiss Conner A."},' +
-                   '{"Name":"Whetsel Christopher J."},' +
-                   '{"Name":"White Jesse N."},' +
-                   '{"Name":"White Kyle J."},' +
-                   '{"Name":"Wilken Ethan A."},' +
-                   '{"Name":"Wilt Garrett R."},' +
-                   '{"Name":"Wolken John M."}]}';
-        var obj = JSON.parse(text);
+        var chosenPeople = [];
+        var text = [
+                   "Acosta Andres",
+                   "Ash Jacob B.",
+                   "Atkinson Bradley J.",
+                   "Basquette Weston J.",
+                   "Becker Zack E.",
+                   "Bettendorf Carson W.",
+                   "Biros Steven E.",
+                   "Bowman Nicholas G.",
+                   "Brandsgaard Peter",
+                   "Brooks Michael R.",
+                   "Clarke Kevan S.",
+                   "DuMontier Parker J.",
+                   "Eagan Landen C.",
+                   "Endsley Nicholas S.",
+                   "Farinella Samuel F.",
+                   "Foutch Alec P.",
+                   "Gabel Joshua J.",
+                   "Gerstenkorn Matthew G.",
+                   "Gjerde Jamison E.",
+                   "Kirby Austin T.",
+                   "Laramie Austin M.",
+                   "Lindsay David S.",
+                   "Marsch Jackson L.",
+                   "Mathewson Ryan A.",
+                   "Meyer Grahm R.",
+                   "Meyer William B.",
+                   "Naeger Ian V.",
+                   "Norman Brett A.",
+                   "OGorman Nicholas P.",
+                   "Oman Richard A.",
+                   "Ort Gabe D.",
+                   "Patel Hareen B.",
+                   "Pawlak Brett C.",
+                   "Rademan Kael M.",
+                   "Roussin Ethan J.",
+                   "Salcedo Braxton T.",
+                   "Salinas Alex A.",
+                   "Sanders Jacob J. D.",
+                   "Schowalter Ryan R.",
+                   "Short Alec W.",
+                   "Sikes Preston S",
+                   "Skawinski Chase L. S.",
+                   "Smith Jackson T.",
+                   "Surls Brett A.",
+                   "Taylor Matthew J.",
+                   "Taylor Nicholas J.",
+                   "Tompkins Spencer G.",
+                   "Wan Wenbin",
+                   "Wands Corey P.",
+                   "Warder Cameron P.",
+                   "Weiss Conner A.",
+                   "Whetsel Christopher J.",
+                   "White Jesse N.",
+                   "White Kyle J.",
+                   "Wilken Ethan A.",
+                   "Wilt Garrett R.",
+                   "Wolken John M."];
     </script>
     <title>Sober Monitor Generator</title>
     <style>
@@ -145,13 +144,14 @@
 	<script type="text/javascript">
         $('#DoIt').on('click', function () {
             
-            for (i = 0; i < 56; i++) {
+            for (i = 0; i < text.length - 1; i++) {
             
-                chosenPeople[i] = Math.floor(Math.random() * (56 - 0));
-                console.log[chosenPeople[i]];
-                for (j = 0; j < obj.length; j++) {
-                    if (chosenPeople[i] == chosenPeople[j]) {
-                        chosenPeople[i] = Math.floor(Math.random() * (obj.length - 0));
+                chosenPeople[i] = Math.floor(Math.random() * (text.length));
+                console.log(chosenPeople[i]);
+                for (j = 0; j < i + 1; j++) {
+                    if (chosenPeople[j] == chosenPeople[i]) {
+                        console.log(chosenPeople[j]);
+                        chosenPeople[i] = Math.floor(Math.random() * (text.length));
                         j = 0;
                     }
                 }
@@ -174,134 +174,134 @@
         var data1 =
         [
             {
-                "fn": obj.brothers[chosenPeople[0]],
+                "fn": text[chosenPeople[0]],
             },
             {
-                "fn": obj.brothers[chosenPeople[1]],
+                "fn": text[chosenPeople[1]],
             },
             {
-                "fn": obj.brothers[chosenPeople[2]],
+                "fn": text[chosenPeople[2]],
             },
             {
-                "fn": obj.brothers[chosenPeople[3]],
+                "fn": text[chosenPeople[3]],
             },
             {
-                "fn": obj.brothers[chosenPeople[4]],
+                "fn": text[chosenPeople[4]],
             },
             {
-                "fn": obj.brothers[chosenPeople[5]],
+                "fn": text[chosenPeople[5]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[6]],
+                "fn": text[chosenPeople[6]],
             },
             {
-                "fn": obj.brothers[chosenPeople[7]],
+                "fn": text[chosenPeople[7]],
 
             }
         ];
         var data2 =
         [
             {
-                "fn": obj.brothers[chosenPeople[8]],
+                "fn": text[chosenPeople[8]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[9]],
+                "fn": text[chosenPeople[9]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[10]],
+                "fn": text[chosenPeople[10]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[11]],
+                "fn": text[chosenPeople[11]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[12]],
+                "fn": text[chosenPeople[12]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[13]],
+                "fn": text[chosenPeople[13]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[14]],
+                "fn": text[chosenPeople[14]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[15]],
+                "fn": text[chosenPeople[15]],
 
             }
         ];
         var data3 =
         [
             {
-                "fn": obj.brothers[chosenPeople[16]],
+                "fn": text[chosenPeople[16]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[17]],
+                "fn": text[chosenPeople[17]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[18]],
+                "fn": text[chosenPeople[18]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[19]],
+                "fn": text[chosenPeople[19]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[20]],
+                "fn": text[chosenPeople[20]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[21]],
+                "fn": text[chosenPeople[21]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[22]],
+                "fn": text[chosenPeople[22]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[23]],
+                "fn": text[chosenPeople[23]],
 
             }
         ];
         var data4 =
         [
             {
-                "fn": obj.brothers[chosenPeople[24]],
+                "fn": text[chosenPeople[24]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[25]],
+                "fn": text[chosenPeople[25]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[26]],
+                "fn": text[chosenPeople[26]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[27]],
+                "fn": text[chosenPeople[27]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[28]],
+                "fn": text[chosenPeople[28]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[29]],
+                "fn": text[chosenPeople[29]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[30]],
+                "fn": text[chosenPeople[30]],
 
             },
             {
-                "fn": obj.brothers[chosenPeople[31]],
+                "fn": text[chosenPeople[31]],
 
             }
         ];
