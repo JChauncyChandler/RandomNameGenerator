@@ -15,63 +15,7 @@
     <script type="text/javascript">
         var chosenPeople = [];
         var text = [
-                   "Acosta Andres",
-                   "Ash Jacob B.",
-                   "Atkinson Bradley J.",
-                   "Basquette Weston J.",
-                   "Becker Zack E.",
-                   "Bettendorf Carson W.",
-                   "Biros Steven E.",
-                   "Bowman Nicholas G.",
-                   "Brandsgaard Peter",
-                   "Brooks Michael R.",
-                   "Clarke Kevan S.",
-                   "DuMontier Parker J.",
-                   "Eagan Landen C.",
-                   "Endsley Nicholas S.",
-                   "Farinella Samuel F.",
-                   "Foutch Alec P.",
-                   "Gabel Joshua J.",
-                   "Gerstenkorn Matthew G.",
-                   "Gjerde Jamison E.",
-                   "Kirby Austin T.",
-                   "Laramie Austin M.",
-                   "Lindsay David S.",
-                   "Marsch Jackson L.",
-                   "Mathewson Ryan A.",
-                   "Meyer Grahm R.",
-                   "Meyer William B.",
-                   "Naeger Ian V.",
-                   "Norman Brett A.",
-                   "OGorman Nicholas P.",
-                   "Oman Richard A.",
-                   "Ort Gabe D.",
-                   "Patel Hareen B.",
-                   "Pawlak Brett C.",
-                   "Rademan Kael M.",
-                   "Roussin Ethan J.",
-                   "Salcedo Braxton T.",
-                   "Salinas Alex A.",
-                   "Sanders Jacob J. D.",
-                   "Schowalter Ryan R.",
-                   "Short Alec W.",
-                   "Sikes Preston S",
-                   "Skawinski Chase L. S.",
-                   "Smith Jackson T.",
-                   "Surls Brett A.",
-                   "Taylor Matthew J.",
-                   "Taylor Nicholas J.",
-                   "Tompkins Spencer G.",
-                   "Wan Wenbin",
-                   "Wands Corey P.",
-                   "Warder Cameron P.",
-                   "Weiss Conner A.",
-                   "Whetsel Christopher J.",
-                   "White Jesse N.",
-                   "White Kyle J.",
-                   "Wilken Ethan A.",
-                   "Wilt Garrett R.",
-                   "Wolken John M."];
+                  ];
     </script>
     <title>Sober Monitor Generator</title>
     <style>
@@ -94,46 +38,48 @@
             <button id="DoIt" type="button" class="btn btn-primary btn-block">May The Odds Be Ever In Your Favor</button>
             
             <!-- Table for party 1-->
-            <h2>Party 1</h2>
-            <table id="party1"class="table">
+            <h2>Syllabuzzed 8/26</h2>
+            <table id="party1" class="table-striped">
                 <thead>
                     <tr>
                         <th data-field="fn">Name</th>
+                        <th data-field="ln">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                <tbody></tbody>
             </table>
 
             <!-- Table for party 2-->
-            <h2>Party 2</h2>
-            <table id="party2" class="table">
+            <h2>Rush Week Toga 9/2</h2>
+            <table id="party2" class="table-striped">
                 <thead>
                     <tr>
                         <th data-field="fn">Name</th>
+                        <th data-field="ln">Status</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
 
             <!-- Table for party 3-->
-            <h2>Party 3</h2>
-            <table id="party3" class="table">
+            <h2>Halloween 10/29</h2>
+            <table id="party3" class="table-striped">
                 <thead>
                     <tr>
                         <th data-field="fn">Name</th>
+                        <th data-field="ln">Status</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
 
             <!-- Table for party 4-->
-            <h2>Party 4</h2>
-            <table id="party4" class="table">
+            <h2>Ugly Christmas 12/8</h2>
+            <table id="party4" class="table-striped">
                 <thead>
                     <tr>
                         <th data-field="fn">Name</th>
+                        <th data-field="ln">Status</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -144,18 +90,184 @@
 	<script type="text/javascript">
         $('#DoIt').on('click', function () {
             
-            for (i = 0; i < text.length - 1; i++) {
-            
-                chosenPeople[i] = Math.floor(Math.random() * (text.length));
-                console.log(chosenPeople[i]);
-                for (j = 0; j < i + 1; j++) {
-                    if (chosenPeople[j] == chosenPeople[i]) {
-                        console.log(chosenPeople[j]);
-                        chosenPeople[i] = Math.floor(Math.random() * (text.length));
-                        j = 0;
-                    }
-                }
+            for (i = 0; i < text.length; i++) {
+                chosenPeople[i] = i;
             }
+            shuffle(chosenPeople);
+            
+
+
+            console.log(chosenPeople[1]);
+            console.log(chosenPeople[2]);
+            console.log(chosenPeople[3]);
+            console.log(text[chosenPeople[1]]);
+            
+            var data1 =
+        [
+            {
+                "fn": text[chosenPeople[0]],
+                "ln": "Active",
+            },
+            {
+                "fn": text[chosenPeople[1]],
+                "ln": "Active",
+            },
+            {
+                "fn": text[chosenPeople[2]],
+                "ln": "Active",
+            },
+            {
+                "fn": text[chosenPeople[3]],
+                "ln": "Active",
+            },
+            {
+                "fn": text[chosenPeople[4]],
+                "ln": "On Call",
+            },
+            {
+                "fn": text[chosenPeople[5]],
+                "ln": "On Call",
+
+            },
+            {
+                "fn": text[chosenPeople[6]],
+                "ln": "On Call",
+            },
+            {
+                "fn": text[chosenPeople[7]],
+                "ln": "On Call",
+
+            }
+        ];
+            var data2 =
+            [
+                {
+                    "fn": text[chosenPeople[8]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[9]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[10]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[11]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[12]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[13]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[14]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[15]],
+                    "ln": "On Call",
+
+                }
+            ];
+            var data3 =
+            [
+                {
+                    "fn": text[chosenPeople[16]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[17]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[18]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[19]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[20]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[21]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[22]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[23]],
+                    "ln": "On Call",
+
+                }
+            ];
+            var data4 =
+            [
+                {
+                    "fn": text[chosenPeople[24]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[25]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[26]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[27]],
+                    "ln": "Active",
+
+                },
+                {
+                    "fn": text[chosenPeople[28]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[29]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[30]],
+                    "ln": "On Call",
+
+                },
+                {
+                    "fn": text[chosenPeople[31]],
+                    "ln": "On Call",
+
+                }
+            ];
 
             $('#party1').bootstrapTable({
                data: data1
@@ -171,140 +283,15 @@
             });
         });
        
-        var data1 =
-        [
-            {
-                "fn": text[chosenPeople[0]],
-            },
-            {
-                "fn": text[chosenPeople[1]],
-            },
-            {
-                "fn": text[chosenPeople[2]],
-            },
-            {
-                "fn": text[chosenPeople[3]],
-            },
-            {
-                "fn": text[chosenPeople[4]],
-            },
-            {
-                "fn": text[chosenPeople[5]],
-
-            },
-            {
-                "fn": text[chosenPeople[6]],
-            },
-            {
-                "fn": text[chosenPeople[7]],
-
+        function shuffle(o) {
+            var j, x, i;
+            for (i = o.length; i; i--) {
+                j = Math.floor( Math.random() * (text.length));
+                x = o[i - 1];
+                o[i - 1] = o[j];
+                o[j] = x;
             }
-        ];
-        var data2 =
-        [
-            {
-                "fn": text[chosenPeople[8]],
-
-            },
-            {
-                "fn": text[chosenPeople[9]],
-
-            },
-            {
-                "fn": text[chosenPeople[10]],
-
-            },
-            {
-                "fn": text[chosenPeople[11]],
-
-            },
-            {
-                "fn": text[chosenPeople[12]],
-
-            },
-            {
-                "fn": text[chosenPeople[13]],
-
-            },
-            {
-                "fn": text[chosenPeople[14]],
-
-            },
-            {
-                "fn": text[chosenPeople[15]],
-
-            }
-        ];
-        var data3 =
-        [
-            {
-                "fn": text[chosenPeople[16]],
-
-            },
-            {
-                "fn": text[chosenPeople[17]],
-
-            },
-            {
-                "fn": text[chosenPeople[18]],
-
-            },
-            {
-                "fn": text[chosenPeople[19]],
-
-            },
-            {
-                "fn": text[chosenPeople[20]],
-
-            },
-            {
-                "fn": text[chosenPeople[21]],
-
-            },
-            {
-                "fn": text[chosenPeople[22]],
-
-            },
-            {
-                "fn": text[chosenPeople[23]],
-
-            }
-        ];
-        var data4 =
-        [
-            {
-                "fn": text[chosenPeople[24]],
-
-            },
-            {
-                "fn": text[chosenPeople[25]],
-
-            },
-            {
-                "fn": text[chosenPeople[26]],
-
-            },
-            {
-                "fn": text[chosenPeople[27]],
-
-            },
-            {
-                "fn": text[chosenPeople[28]],
-
-            },
-            {
-                "fn": text[chosenPeople[29]],
-
-            },
-            {
-                "fn": text[chosenPeople[30]],
-
-            },
-            {
-                "fn": text[chosenPeople[31]],
-
-            }
-        ];
+        };
     </script>
 </body>
 </html>
